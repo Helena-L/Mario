@@ -1,0 +1,17 @@
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/UnityEngine.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/UnityEditor.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/Mono.Cecil.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/Unity.DataContract.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/shan/Documents/workplace/UnityProjects/GameProject1/Project1-1/Temp/bin/Debug/Mono.Cecil.Mdb.dll
