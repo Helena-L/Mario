@@ -1,0 +1,8 @@
+Project 1-1
+
+Team member: Wenshan (Helena) Li, Programmer. No Artist.
+
+All programming requirements completed by Wenshan Li.
+
+Added a new ability to Mario: Super Speed!
+	When the player press "Q" on the keyboard, Mario can have super speed! He can move super fast on ground or in air! :)

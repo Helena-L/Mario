@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour {
     bool super;
     bool little;
 
+	//doing some experiments... never mind haha
+	float SuperSpeed = 100;
+
     //Awake is called before any Start function
     void Awake() {
         superMario = GameObject.Find("Super Mario");
@@ -73,6 +76,22 @@ public class PlayerController : MonoBehaviour {
          * YOUR CODE HERE
          * 
          */
+		if (Input.GetKey (KeyCode.LeftArrow) && facingRight == true)
+			Flip ();
+		if (Input.GetKey (KeyCode.RightArrow) && facingRight == false)
+			Flip ();
+
+		// Some code to accelarate Mario maybe lol
+		/*
+		if (Input.GetKey (KeyCode.RightArrow))
+			transform.Translate (Vector2.right * moveSpeed * Time.deltaTime);
+		if (Input.GetKey (KeyCode.LeftArrow))
+			transform.Translate (Vector2.left * moveSpeed * Time.deltaTime);
+		*/
+		if (Input.GetKey (KeyCode.Q)) {
+			rb.AddForce(new Vector2(SuperSpeed * moveX, 0));
+		}
+
         myState.FixedUpdate();
         if (nextState != null)
         {
@@ -94,12 +113,23 @@ public class PlayerController : MonoBehaviour {
         rb.AddForce(new Vector3(-25 * rb.velocity.x, 0));
     }
 
+	bool CheckForGround() {
+		SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
+		float castHeight = mySprite.sprite.bounds.size.y / 2 + 0.25f;
+		Vector3 origin = new Vector3(transform.position.x, transform.position.y);
+		RaycastHit2D hit = Physics2D.Raycast(origin, Vector3.down, castHeight, whatIsGround);
+		Debug.DrawRay(origin, Vector3.down * castHeight);
+		return hit.collider != null;
+	}
+
+	/*
     bool CheckForGround() {
         Vector2 origin = new Vector2(rb.position.x, rb.position.y - 0.75f);
         RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, 0.5f, whatIsGround);
         Debug.DrawRay(origin, Vector2.down * 0.5f);
         return hit.collider != null;
     }
+    */
 
     void Duck()
     {
@@ -259,7 +289,9 @@ public class PlayerController : MonoBehaviour {
              * 
              * YOUR CODE HERE.
              * 
-             */ 
+             */
+			//Debug.Log(jumpForce);
+			rb.AddForce(new Vector2(0, moveJump * jumpForce));
             anim.SetBool("Jumping", true);
         }
 
@@ -269,7 +301,9 @@ public class PlayerController : MonoBehaviour {
              * 
              * YOUR CODE HERE.
              * 
-             */ 
+             */
+			moveJump = Input.GetAxis("Jump");
+			moveX = Input.GetAxis("Horizontal");
         }
 
         public void FixedUpdate()
@@ -287,6 +321,17 @@ public class PlayerController : MonoBehaviour {
              * YOUR CODE HERE.
              * 
              */
+			if(Mathf.Abs(rb.velocity.magnitude) <= maxSpeed)
+			{
+				//Debug.Log (moveX);
+				rb.AddForce(new Vector2(airHorizAcceleration * moveX, 0));
+			}
+
+			if (jumpingTime >= 0)
+			{
+				rb.AddForce(new Vector2(0, airJumpAcceleration * moveJump));
+				Debug.Log (rb.velocity);
+			}
             /* Continuously check that you haven't hit the ground. If
              * you have, then transition to the 'Grounded' state.*/
             if (controller.CheckForGround())
